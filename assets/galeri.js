@@ -23,7 +23,7 @@ window.FOTO = [
 
   /* ---------------- penghargaan ---------------- */
   { berkas: "penghargaan-loa-duri-ilir.jpg", kelompok: "penghargaan", tahun: "2024",
-    judul: "Penyerahan penghargaan Desa Cantik kepada Desa Loa Duri Ilir — terbaik se-Kalimantan Timur dan peringkat 23 nasional" },
+    judul: "Penyerahan penghargaan Desa Cantik kepada Desa Loa Duri Ilir — terbaik se-Kalimantan Timur" },
   { berkas: "penghargaan-batuah-bps-ri.jpg", kelompok: "penghargaan", tahun: "2025",
     judul: "Delegasi Desa Batuah di kantor BPS RI, Jakarta — penerimaan penghargaan peringkat 6 nasional" },
 

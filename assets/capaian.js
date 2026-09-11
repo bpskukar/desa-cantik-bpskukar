@@ -14,6 +14,9 @@
        wilayah, bukan dari berita itu sendiri;
    (b) apakah ada desa binaan tahun 2023 — tidak ditemukan pemberitaannya,
        sehingga tahun itu tidak ditampilkan di lini masa.
+   CATATAN 2024: sejumlah pemberitaan menyebut Loa Duri Ilir "peringkat 23
+   nasional". Menurut BPS Kabupaten Kutai Kartanegara angka itu tidak tepat;
+   capaiannya adalah terbaik se-Kalimantan Timur. Jangan ditambahkan kembali.
    ========================================================================== */
 window.DESCAN = {
 
@@ -47,16 +50,16 @@ window.DESCAN = {
     },
     {
       tahun: "2024", jumlah: 1, judul: "Desa Loa Duri Ilir",
-      isi: "Pembinaan dipusatkan pada satu desa agar pendampingannya lebih dalam. Hasilnya Loa Duri Ilir menjadi Desa Cantik terbaik se-Kalimantan Timur dan menempati peringkat ke-23 nasional dari 38 desa terbaik se-Indonesia.",
+      isi: "Pembinaan dipusatkan pada satu desa agar pendampingannya lebih dalam. Hasilnya Loa Duri Ilir menjadi Desa Cantik terbaik se-Kalimantan Timur.",
       desa: [{ nama: "Loa Duri Ilir", kecamatan: "Loa Janan", catatan: "" }],
-      peringkat: "kaltim", prestasi: "Terbaik se-Kaltim · Peringkat 23 nasional",
+      peringkat: "kaltim", prestasi: "Terbaik se-Kalimantan Timur",
       rujukan: [
-        { judul: "Desa Loa Duri Ilir Duduki Peringkat ke-23 Desa Cantik Tingkat Nasional", penerbit: "Pemkab Kutai Kartanegara", tanggal: "Februari 2025",
-          url: "https://www.kukarkab.go.id/berita/2119/Desa-Loa-Duri-Ilir-Duduki-Peringkat-ke-23-Desa-Cantik-Tingkat-Nasional" },
-        { judul: "Terbaik di Kaltim, Loa Duri Ilir Duduki Peringkat 23 Desa Cantik Tingkat Nasional", penerbit: "Kaltim Today", tanggal: "26 Februari 2025",
-          url: "https://kaltimtoday.co/terbaik-di-kaltim-loa-duri-ilir-duduki-peringkat-23-desa-cantik-tingkat-nasional" },
         { judul: "Desa Loa Duri Ilir Terpilih Desa Cantik Terbaik se-Kaltim Tahun 2024", penerbit: "Koran Kaltim", tanggal: "Februari 2025",
-          url: "https://korankaltim.com/read/undefined/77569/desa-loa-duri-ilir-terpilih-desa-cantik-terbaik-se-kaltim-tahun-2024" }
+          url: "https://korankaltim.com/read/undefined/77569/desa-loa-duri-ilir-terpilih-desa-cantik-terbaik-se-kaltim-tahun-2024" },
+        { judul: "Desa Loa Duri Ilir Raih Desa Cantik Terbaik Kaltim", penerbit: "Eksposisi Borneo", tanggal: "Februari 2025",
+          url: "https://eksposisiborneo.com/desa-loa-duri-ilir-raih-desa-cantik-terbaik-kaltim/" },
+        { judul: "Loa Duri Ilir Desa Cinta Statistik Terbaik di Kaltim", penerbit: "Beranda Post", tanggal: "27 Februari 2025",
+          url: "https://berandapost.com/2025/02/27/loa-duri-ilir-desa-cinta-statistik-terbaik-di-kaltim/" }
       ]
     },
     {
