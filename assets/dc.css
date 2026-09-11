@@ -149,8 +149,13 @@ h2.sec { font-family:var(--f-disp); font-weight:800; font-size:clamp(1.4rem,3vw,
 .foto { position:relative; border-radius:var(--r); overflow:hidden; background:var(--sunk); border:1px solid var(--line); }
 .foto img { width:100%; aspect-ratio:4/3; object-fit:cover; }
 .foto figcaption { padding:11px 14px; font-size:13px; color:var(--ink-2); background:var(--panel); border-top:1px solid var(--line); }
-.foto--kosong { display:grid; place-items:center; aspect-ratio:4/3; color:var(--ink-3); font-size:13px; text-align:center; padding:20px; border-style:dashed; border-width:2px; }
-.foto--kosong svg { width:30px; height:30px; opacity:.5; margin:0 auto 10px; }
+/* kotak kosong TIDAK memakai aspect-ratio: saat ia melebar satu baris penuh
+   (.foto--lebar), rasio 4/3 membuat tingginya ikut selebar halaman — pernah
+   menghasilkan kotak setinggi ~900 px. Tinggi tetap yang wajar lebih aman. */
+.foto--kosong { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  min-height:170px; color:var(--ink-3); font-size:13.5px; text-align:center; padding:26px 20px;
+  border-style:dashed; border-width:2px; line-height:1.6; }
+.foto--kosong svg { width:30px; height:30px; opacity:.5; flex:none; }
 .foto--lebar { grid-column:1/-1; }
 .foto--lebar img { aspect-ratio:21/9; }
 
@@ -188,3 +193,17 @@ body > .kaki { margin-top:auto; }
 .rujuk li { padding-left:12px; border-left:2px solid var(--line-2); }
 .rujuk li a { color:var(--link); font-weight:500; line-height:1.45; display:block; }
 .rujuk li span { display:block; color:var(--ink-3); font-size:12px; margin-top:2px; }
+
+/* ---------------- galeri berkelompok ---------------- */
+.gal { margin-bottom:38px; }
+.gal:last-child { margin-bottom:0; }
+.gal__j { font-family:var(--f-disp); font-size:19px; font-weight:700; letter-spacing:-.01em;
+  color:var(--ink); margin:0 0 6px; }
+.gal__r { margin:0 0 16px; color:var(--ink-2); font-size:14.5px; max-width:70ch; }
+/* infografis: tampil utuh, tidak dipotong, dan bisa diklik */
+.galeri--utuh { grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); align-items:start; }
+.foto--utuh { background:var(--panel); }
+.foto--utuh a { display:block; line-height:0; }
+.foto--utuh img { width:100%; height:auto; aspect-ratio:auto; object-fit:contain; }
+.foto--utuh a:hover img { opacity:.92; }
+.foto--utuh a:focus-visible { outline:3px solid var(--hijau); outline-offset:2px; }

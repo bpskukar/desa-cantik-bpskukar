@@ -157,7 +157,7 @@
     <p class="sec-kicker">Dokumentasi</p>
     <h2 class="sec">Desa Cantik Kukar dalam gambar</h2>
     <p class="sec__note">Pembinaan, pendampingan agen statistik, dan penganugerahan di Kutai Kartanegara.</p>
-    <div class="galeri" id="galeri"></div>
+    <div id="galeriIsi"></div>
   </div>
 </section>
 
@@ -257,17 +257,44 @@
     return "<li><b>" + esc(t[0]) + "</b><span>" + esc(t[1]) + "</span></li>";
   }).join("");
 
-  /* ---- galeri ---- */
+  /* ---- galeri, dikelompokkan ---- */
   var foto = window.FOTO || [];
-  el("galeri").innerHTML = foto.length
-    ? foto.map(function (f) {
-        return '<figure class="foto' + (f.lebar ? " foto--lebar" : "") + '" style="margin:0">' +
-          '<img src="assets/foto/' + esc(f.berkas) + '" alt="' + esc(f.judul) + '" loading="lazy">' +
-          "<figcaption>" + esc(f.judul) + (f.tahun ? ' <span style="color:var(--ink-3)">· ' + esc(f.tahun) + "</span>" : "") + "</figcaption></figure>";
-      }).join("")
-    : '<div class="foto foto--kosong foto--lebar">' +
+  var kelompok = window.FOTO_KELOMPOK || [];
+
+  function gambarFoto(f) {
+    var img = '<img src="assets/foto/' + esc(f.berkas) + '" alt="' + esc(f.judul) + '" loading="lazy">';
+    var kap = "<figcaption>" + esc(f.judul) +
+      (f.tahun ? ' <span style="color:var(--ink-3)">· ' + esc(f.tahun) + "</span>" : "") + "</figcaption>";
+    /* infografis ditampilkan utuh (tidak dipotong) dan bisa dibuka ukuran penuh */
+    if (f.utuh) {
+      return '<figure class="foto foto--utuh" style="margin:0">' +
+        '<a href="assets/foto/' + esc(f.berkas) + '" target="_blank" rel="noopener" ' +
+        'title="Buka ukuran penuh">' + img + "</a>" + kap + "</figure>";
+    }
+    return '<figure class="foto' + (f.lebar ? " foto--lebar" : "") + '" style="margin:0">' + img + kap + "</figure>";
+  }
+
+  if (!foto.length) {
+    el("galeriIsi").innerHTML = '<div class="galeri"><div class="foto foto--kosong foto--lebar">' +
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="m21 15-5-5L5 19"/></svg>' +
-      esc(window.FOTO_KOSONG || "") + "</div>";
+      esc(window.FOTO_KOSONG || "") + "</div></div>";
+  } else {
+    var adaKelompok = kelompok.filter(function (k) {
+      return foto.some(function (f) { return f.kelompok === k[0]; });
+    });
+    /* foto tanpa kelompok tetap tampil, ditaruh di bagian tanpa judul */
+    var lepas = foto.filter(function (f) {
+      return !kelompok.some(function (k) { return k[0] === f.kelompok; });
+    });
+    el("galeriIsi").innerHTML = adaKelompok.map(function (k) {
+      var isi = foto.filter(function (f) { return f.kelompok === k[0]; });
+      return '<section class="gal">' +
+        '<h3 class="gal__j">' + esc(k[1]) + "</h3>" +
+        (k[2] ? '<p class="gal__r">' + esc(k[2]) + "</p>" : "") +
+        '<div class="galeri' + (k[0] === "profil" ? " galeri--utuh" : "") + '">' +
+        isi.map(gambarFoto).join("") + "</div></section>";
+    }).join("") + (lepas.length ? '<section class="gal"><div class="galeri">' + lepas.map(gambarFoto).join("") + "</div></section>" : "");
+  }
 })();
 </script>
 </body>
