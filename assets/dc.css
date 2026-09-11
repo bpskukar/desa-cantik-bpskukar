@@ -174,3 +174,17 @@ body > .kaki { margin-top:auto; }
 @media (max-width:560px) { .blok { padding:44px 0; } .hero__in { padding:40px 20px 44px; } }
 @media (prefers-reduced-motion:reduce) { * { transition-duration:.01ms !important; } html { scroll-behavior:auto; } }
 @media print { .pintar, .hero__aksi { display:none; } }
+
+/* ---------------- rujukan pemberitaan di lini masa ---------------- */
+.rujuk { margin-top:10px; font-size:13px; }
+.rujuk > summary { cursor:pointer; display:inline-flex; align-items:center; gap:6px;
+  color:var(--hijau-teks); font-family:var(--f-disp); font-weight:600; font-size:12.5px;
+  background:var(--hijau-wash); border-radius:99px; padding:4px 12px; list-style:none; }
+.rujuk > summary::-webkit-details-marker { display:none; }
+.rujuk > summary::before { content:"\2197"; font-weight:700; }
+.rujuk[open] > summary::before { content:"\2013"; }
+.rujuk > summary:hover { background:var(--hijau); color:#fff; }
+.rujuk ul { list-style:none; margin:10px 0 0; padding:0; display:grid; gap:8px; }
+.rujuk li { padding-left:12px; border-left:2px solid var(--line-2); }
+.rujuk li a { color:var(--link); font-weight:500; line-height:1.45; display:block; }
+.rujuk li span { display:block; color:var(--ink-3); font-size:12px; margin-top:2px; }

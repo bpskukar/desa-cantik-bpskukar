@@ -232,6 +232,11 @@
       '<p class="lini__d">' + esc(t.isi) + "</p>" +
       (desa.length ? '<p class="lini__d" style="margin-top:6px;font-size:13.5px;color:var(--ink-3)">Desa binaan: ' +
         desa.map(function (d) { return "<b>" + esc(d.nama) + "</b>" + (d.kecamatan ? " (Kec. " + esc(d.kecamatan) + ")" : ""); }).join(", ") + "</p>" : "") +
+      ((t.rujukan || []).length ? '<details class="rujuk"><summary>' + t.rujukan.length + ' pemberitaan</summary><ul>' +
+        t.rujukan.map(function (r) {
+          return '<li><a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.judul) + "</a>" +
+            '<span>' + esc(r.penerbit) + (r.tanggal ? " · " + esc(r.tanggal) : "") + "</span></li>";
+        }).join("") + "</ul></details>" : "") +
       "</div>";
   }).join("");
 

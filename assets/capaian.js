@@ -6,6 +6,14 @@
    Bagian yang masih kosong ("") sengaja dibiarkan kosong — halaman otomatis
    menyembunyikannya, jadi tidak akan muncul tulisan menggantung. Isi bila
    datanya sudah pasti; jangan diisi kira-kira.
+
+   Nama desa & capaian tiap tahun dirujuk dari pemberitaan resmi (lihat
+   "rujukan" di tiap tahun). DUA HAL YANG PERLU DIPASTIKAN KANTOR:
+   (a) kecamatan lima desa/kelurahan binaan 2022 — nama desanya bersumber dari
+       berita Diskominfo Kaltim, tetapi kecamatannya dilengkapi dari rujukan
+       wilayah, bukan dari berita itu sendiri;
+   (b) apakah ada desa binaan tahun 2023 — tidak ditemukan pemberitaannya,
+       sehingga tahun itu tidak ditampilkan di lini masa.
    ========================================================================== */
 window.DESCAN = {
 
@@ -15,7 +23,7 @@ window.DESCAN = {
     totalDesa: 10,                 /* 5 (2022) + 1 (2024) + 1 (2025) + 3 (2026) */
     juaraKaltim: 3,                /* 2024, 2025, 2026 */
     capaianNasional: "6 besar nasional",
-    catatan: "Angka pada halaman ini merangkum pembinaan Desa Cinta Statistik oleh BPS Kabupaten Kutai Kartanegara."
+    catatan: "Angka pada halaman ini merangkum pembinaan Desa Cinta Statistik oleh BPS Kabupaten Kutai Kartanegara. Nama desa binaan dan capaiannya dirujuk dari pemberitaan resmi pemerintah daerah dan media kredibel — tautannya ada di tiap tahun."
   },
 
   /* -------- lini masa pembinaan -------- */
@@ -24,31 +32,73 @@ window.DESCAN = {
     {
       tahun: "2022", jumlah: 5, judul: "Lima desa binaan pertama",
       isi: "Awal Desa Cinta Statistik di Kutai Kartanegara. Lima desa/kelurahan dibina sekaligus: pengenalan pengelolaan data desa, penunjukan agen statistik, dan penyusunan output statistik desa yang pertama.",
-      desa: [],                    /* ← isi nama lima desanya bila sudah pasti */
-      peringkat: "", prestasi: ""
+      desa: [
+        { nama: "Kelurahan Jawa",          kecamatan: "Sanga-Sanga", catatan: "" },
+        { nama: "Kelurahan Loa Janan Ulu", kecamatan: "Loa Janan",   catatan: "" },
+        { nama: "Kelurahan Maluhu",        kecamatan: "Tenggarong",  catatan: "" },
+        { nama: "Sungai Payang",           kecamatan: "Loa Kulu",    catatan: "" },
+        { nama: "Pela",                    kecamatan: "Kota Bangun", catatan: "" }
+      ],
+      peringkat: "", prestasi: "",
+      rujukan: [
+        { judul: "Tingkatkan Literasi Statistik Melalui Desa Cantik BPS", penerbit: "Diskominfo Kaltim", tanggal: "11 Oktober 2022",
+          url: "https://diskominfo.kaltimprov.go.id/berita/tingkatkan-literasi-statistik-melalui-desa-cantik-bps" }
+      ]
     },
     {
       tahun: "2024", jumlah: 1, judul: "Desa Loa Duri Ilir",
-      isi: "Pembinaan dipusatkan pada satu desa agar pendampingannya lebih dalam. Hasilnya Loa Duri Ilir menjadi Desa Cantik terbaik se-Kalimantan Timur.",
-      desa: [{ nama: "Loa Duri Ilir", kecamatan: "", catatan: "" }],
-      peringkat: "kaltim", prestasi: "Peringkat 1 Kalimantan Timur"
+      isi: "Pembinaan dipusatkan pada satu desa agar pendampingannya lebih dalam. Hasilnya Loa Duri Ilir menjadi Desa Cantik terbaik se-Kalimantan Timur dan menempati peringkat ke-23 nasional dari 38 desa terbaik se-Indonesia.",
+      desa: [{ nama: "Loa Duri Ilir", kecamatan: "Loa Janan", catatan: "" }],
+      peringkat: "kaltim", prestasi: "Terbaik se-Kaltim · Peringkat 23 nasional",
+      rujukan: [
+        { judul: "Desa Loa Duri Ilir Duduki Peringkat ke-23 Desa Cantik Tingkat Nasional", penerbit: "Pemkab Kutai Kartanegara", tanggal: "Februari 2025",
+          url: "https://www.kukarkab.go.id/berita/2119/Desa-Loa-Duri-Ilir-Duduki-Peringkat-ke-23-Desa-Cantik-Tingkat-Nasional" },
+        { judul: "Terbaik di Kaltim, Loa Duri Ilir Duduki Peringkat 23 Desa Cantik Tingkat Nasional", penerbit: "Kaltim Today", tanggal: "26 Februari 2025",
+          url: "https://kaltimtoday.co/terbaik-di-kaltim-loa-duri-ilir-duduki-peringkat-23-desa-cantik-tingkat-nasional" },
+        { judul: "Desa Loa Duri Ilir Terpilih Desa Cantik Terbaik se-Kaltim Tahun 2024", penerbit: "Koran Kaltim", tanggal: "Februari 2025",
+          url: "https://korankaltim.com/read/undefined/77569/desa-loa-duri-ilir-terpilih-desa-cantik-terbaik-se-kaltim-tahun-2024" }
+      ]
     },
     {
       tahun: "2025", jumlah: 1, judul: "Desa Batuah",
       isi: "Capaian tertinggi sejauh ini. Batuah tidak hanya terbaik se-Kalimantan Timur, tetapi juga menembus peringkat enam nasional — bukti bahwa pendampingan yang tekun di satu desa bisa berbicara di tingkat pusat.",
-      desa: [{ nama: "Batuah", kecamatan: "", catatan: "" }],
-      peringkat: "nasional", prestasi: "Peringkat 1 Kalimantan Timur · Peringkat 6 nasional"
+      desa: [{ nama: "Batuah", kecamatan: "Loa Janan", catatan: "" }],
+      peringkat: "nasional", prestasi: "Terbaik se-Kaltim · Peringkat 6 nasional",
+      rujukan: [
+        { judul: "Desa Batuah Kukar Buktikan Tata Kelola Data Terbaik, Raih Penghargaan Desa Cantik BPS RI", penerbit: "Berita Kaltim", tanggal: "29 Oktober 2025",
+          url: "https://beritakaltim.co/2025/10/29/desa-batuah-kukar-buktikan-tata-kelola-data-terbaik-raih-penghargaan-desa-cantik-bps-ri/" },
+        { judul: "Tim Field Evaluation BPS RI Lakukan Penilaian Tahap Akhir Desa Cantik 2025 di Desa Batuah", penerbit: "Pemkab Kutai Kartanegara", tanggal: "2025",
+          url: "https://www.kukarkab.go.id/berita/2816/Tim-Field-Evaluation-BPS-RI-Lakukan-Penilaian-Tahap-Akhir-Desa-Cantik-2025-di-Desa-Batuah" },
+        { judul: "Bupati Kukar sebut “Desa Cantik” permudah rancang pembangunan", penerbit: "ANTARA Kaltim", tanggal: "17 Mei 2025",
+          url: "https://kaltim.antaranews.com/berita/238109/bupati-kukar-sebut-desa-cantik-permudah-rancang-pembangunan" },
+        { judul: "Pencanangan dan Pembinaan Desa Cinta Statistik (Cantik) Tahun 2025 di Desa Batuah", penerbit: "Kecamatan Loa Janan", tanggal: "Mei 2025",
+          url: "https://loajanan.kukarkab.go.id/2025/05/info-berita/berita-desa/1894/" }
+      ]
     },
     {
       tahun: "2026", jumlah: 3, judul: "Tiga desa binaan, Sumber Sari melaju",
-      isi: "Mengikuti sasaran nasional tiga desa/kelurahan per kabupaten/kota. Sumber Sari kembali membawa Kutai Kartanegara sebagai yang terbaik se-Kalimantan Timur dan kini masuk 15 besar nasional; penilaian akhir dan penganugerahan berlangsung September 2026.",
+      isi: "Mengikuti sasaran nasional tiga desa/kelurahan per kabupaten/kota, dan ketiganya sengaja dipilih dari satu kecamatan — Loa Kulu — agar pendampingan lebih efisien. Dicanangkan Wakil Gubernur Kalimantan Timur pada 13 Mei 2026. Sumber Sari kini masuk 15 besar nasional, satu-satunya wakil Kalimantan Timur; penilaian akhir dan penganugerahan berlangsung September 2026.",
       desa: [
-        { nama: "Sumber Sari", kecamatan: "", catatan: "Peringkat 1 Kaltim, 15 besar nasional" },
-        { nama: "", kecamatan: "", catatan: "" },   /* ← desa binaan kedua 2026 */
-        { nama: "", kecamatan: "", catatan: "" }    /* ← desa binaan ketiga 2026 */
+        { nama: "Sumber Sari",   kecamatan: "Loa Kulu", catatan: "15 besar nasional" },
+        { nama: "Loa Kulu Kota", kecamatan: "Loa Kulu", catatan: "lokasi pencanangan" },
+        { nama: "Ponoragan",     kecamatan: "Loa Kulu", catatan: "" }
       ],
-      peringkat: "kaltim", prestasi: "Peringkat 1 Kalimantan Timur · 15 besar nasional",
-      berjalan: true
+      peringkat: "kaltim", prestasi: "Terbaik se-Kaltim · 15 besar nasional",
+      berjalan: true,
+      rujukan: [
+        { judul: "Sumber Sari Masuk 15 Besar Nasional Desa Cantik", penerbit: "Berita Alternatif", tanggal: "9 September 2026",
+          url: "https://www.beritaalternatif.com/sumber-sari-masuk-15-besar-nasional-desa-cantik/" },
+        { judul: "Wagub Kaltim Canangkan Tiga Desa Cantik di Kukar, Perkuat Pembangunan Desa Berbasis Data Presisi", penerbit: "Pemprov Kalimantan Timur", tanggal: "17 Mei 2026",
+          url: "https://www.kaltimprov.go.id/detailberita/wagub-kaltim-canangkan-tiga-desa-cantik-di-kukar-perkuat-pembangunan-desa-berbasis-data-presisi" },
+        { judul: "Pencanangan Desa Cantik di Desa Loa Kulu Kota Berlangsung Meriah", penerbit: "Kecamatan Loa Kulu", tanggal: "13 Mei 2026",
+          url: "https://loakulu.kukarkab.go.id/pencanangan-desa-cantik-di-desa-loa-kulu-kota-berlangsung-meriah-dihadiri-wakil-gubernur-kaltim-dan-bupati-kukar/" },
+        { judul: "Desa Cantik perkuat data dan literasi statistik Kukar", penerbit: "ANTARA Kaltim", tanggal: "15 Mei 2026",
+          url: "https://kaltim.antaranews.com/berita/261663/desa-cantik-perkuat-data-dan-literasi-statistik-kukar" },
+        { judul: "3 Daerah di Kukar Wakili Program Desa Cantik 2026, Mengarah ke Mandiri dan Berkualitas", penerbit: "Tribun Kaltim", tanggal: "Mei 2026",
+          url: "https://kaltim.tribunnews.com/tribun-etam/1148757/3-daerah-di-kukar-wakili-program-desa-cantik-2026-mengarah-ke-mandiri-dan-berkualitas" },
+        { judul: "BPS Kukar Dorong Sumber Sari Jadi Desa Percontohan Berbasis Data", penerbit: "Berita Alternatif", tanggal: "2026",
+          url: "https://www.beritaalternatif.com/bps-kukar-dorong-sumber-sari-jadi-desa-percontohan-berbasis-data/" }
+      ]
     }
   ],
 
